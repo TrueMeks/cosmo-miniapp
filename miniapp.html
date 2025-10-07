@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BeautyCare — Запись</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, Arial;
+            background: #0e1116;
+            color: #e8e8ee
+        }
+
+        .wrap {
+            padding: 16px;
+            max-width: 520px;
+            margin: 0 auto
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0 0 12px
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin: 10px 0
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #263042;
+            background: #111826;
+            color: #e8e8ee
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            background: #8b7cf6;
+            color: #0b0b0e;
+            margin-top: 14px
+        }
+
+        .muted {
+            font-size: 13px;
+            opacity: .8;
+            margin-top: 8px
+        }
+    </style>
+    <!-- ДОЛЖЕН подключаться до твоего miniapp.js -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>Запись на приём</h1>
+        <form id="tgForm">
+            <label>Имя <input name="name" required></label>
+            <label>Телефон <input name="phone" required></label>
+            <label>Услуга
+                <select name="service" required>
+                    <option value="">Выберите…</option>
+                    <option>Чистка лица</option>
+                    <option>Пилинг</option>
+                    <option>Мезотерапия</option>
+                    <option>Брови/Ресницы</option>
+                </select>
+            </label>
+            <label>Дата <input type="date" name="date" required></label>
+            <label>Время <input type="time" name="time" required></label>
+            <label>Комментарий <textarea name="note"></textarea></label>
+
+            <!-- Видимая кнопка -->
+            <button id="submitBtn" type="submit">Отправить</button>
+            <p class="muted">Открывайте форму из меню бота, чтобы отправка ушла в Telegram.</p>
+        </form>
+    </div>
+    <script src="miniapp.js"></script>
+</body>
+
+</html>
